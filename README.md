@@ -13,6 +13,10 @@ Photo Rename Agent 是一個使用 C# / .NET Windows Forms 開發的照片批次
 - 執行前預覽新的檔名
 - 發生碰撞或移動失敗時保留原始檔案，並支援復原
 
+## 使用介面
+
+![Photo Rename Tool 使用介面](docs/images/photo-rename-ui.png)
+
 ## 執行環境
 
 - Windows
