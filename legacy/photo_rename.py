@@ -114,9 +114,9 @@ def main():
     entries = {}
 
     # 1. 固定前綴
-    tk.Label(window, text="1. 固定前綴 (例如: TY-LV-):", anchor="w").pack(fill="x", padx=20, pady=(10,0))
+    tk.Label(window, text="1. 固定前綴 (例如: NY-YG-):", anchor="w").pack(fill="x", padx=20, pady=(10,0))
     entries['prefix'] = tk.Entry(window, width=55)
-    entries['prefix'].insert(0, "TY-LV-")
+    entries['prefix'].insert(0, "NY-YG-")
     entries['prefix'].pack(padx=20)
 
     # 2. 中段起始數字
@@ -128,7 +128,7 @@ def main():
     # 3. 中段自訂文字
     tk.Label(window, text="3. 中段自訂文字 (可自由修改或留空):", anchor="w").pack(fill="x", padx=20, pady=(10,0))
     entries['mid_text'] = tk.Entry(window, width=55)
-    entries['mid_text'].insert(0, "_20240201_白菜_蚜蟲_有翅蟲體_")
+    entries['mid_text'].insert(0, "蛋白質")
     entries['mid_text'].pack(padx=20)
 
     # 4. 尾段起始數字
