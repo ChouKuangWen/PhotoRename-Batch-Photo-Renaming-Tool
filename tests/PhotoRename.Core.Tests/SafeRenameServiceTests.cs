@@ -15,7 +15,13 @@ public class SafeRenameServiceTests
         using var tempDirectory = new TemporaryTestDirectory();
 
         var filePair = tempDirectory.CreateImageFile("IMG001.jpg");
-        var request = new RenameRequest("CUSTOM", IncrementMode.Numeric, startIndex: 7, numericFormat: "D2");
+        var request = new RenameRequest(
+            "CUSTOM",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 7,
+            incrementMode: IncrementMode.Numeric,
+            numericFormat: "D2");
         var service = new SafeRenameService(new FilenameGenerator());
 
         var result = service.Rename(filePair, request);
@@ -35,7 +41,12 @@ public class SafeRenameServiceTests
         tempDirectory.CreateJsonFile("NEW.json");
 
         var filePair = new FilePair(imageFile.ImageFile, jsonFile);
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var moveCalls = 0;
         var service = new SafeRenameService(new FilenameGenerator(), (source, destination) =>
         {
@@ -61,7 +72,12 @@ public class SafeRenameServiceTests
         var imageFile = tempDirectory.CreateImageFile("IMG001.jpg");
         var jsonFile = tempDirectory.CreateJsonFile("IMG001.json");
         var filePair = new FilePair(imageFile.ImageFile, jsonFile);
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var moveCalls = 0;
         var service = new SafeRenameService(new FilenameGenerator(), (source, destination) =>
         {
@@ -92,7 +108,12 @@ public class SafeRenameServiceTests
         var imageFile = tempDirectory.CreateImageFile("IMG001.jpg");
         var jsonFile = tempDirectory.CreateJsonFile("IMG001.json");
         var filePair = new FilePair(imageFile.ImageFile, jsonFile);
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var moveCalls = 0;
         var service = new SafeRenameService(new FilenameGenerator(), (source, destination) =>
         {
@@ -121,7 +142,12 @@ public class SafeRenameServiceTests
         using var tempDirectory = new TemporaryTestDirectory();
 
         var filePair = tempDirectory.CreateImageFile("IMG001.jpg");
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var service = new SafeRenameService(new FilenameGenerator());
 
         var result = service.Rename(filePair, request);
@@ -139,7 +165,12 @@ public class SafeRenameServiceTests
         var imageFile = tempDirectory.CreateImageFile("IMG001.jpg");
         var jsonFile = tempDirectory.CreateJsonFile("IMG001.json");
         var filePair = new FilePair(imageFile.ImageFile, jsonFile);
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var service = new SafeRenameService(new FilenameGenerator());
 
         var result = service.Rename(filePair, request);
@@ -158,7 +189,12 @@ public class SafeRenameServiceTests
 
         var filePair = tempDirectory.CreateImageFile("IMG001.jpg");
         tempDirectory.CreateImageFile("NEW.jpg");
-        var request = new RenameRequest("NEW", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var service = new SafeRenameService(new FilenameGenerator());
 
         var result = service.Rename(filePair, request);

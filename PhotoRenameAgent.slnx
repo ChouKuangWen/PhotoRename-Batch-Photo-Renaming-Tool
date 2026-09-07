@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PhotoRename.App/PhotoRename.App.csproj" />
+    <Project Path="src/PhotoRename.Core/PhotoRename.Core.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PhotoRename.Core.Tests/PhotoRename.Core.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -33,7 +33,7 @@ public sealed class RenameRequest
                 nameof(prefix));
         }
 
-        if (midNumber is null && endNumber is null)
+        if (incrementMode != IncrementMode.None && midNumber is null && endNumber is null)
         {
             throw new ArgumentException(
                 "Mid number and end number cannot both be empty.");

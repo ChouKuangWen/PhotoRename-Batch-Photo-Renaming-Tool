@@ -21,7 +21,12 @@ public class BatchRenameServiceTests
             tempDirectory.CreateImageFile("IMG003.jpg")
         };
 
-        var request = new RenameRequest("NEW_NAME", IncrementMode.Numeric, startIndex: 1);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 1,
+            incrementMode: IncrementMode.Numeric);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         var result = batchRenameService.Rename(filePairs, request);
@@ -53,7 +58,12 @@ public class BatchRenameServiceTests
             tempDirectory.CreateImageFile("IMG003.jpg")
         };
 
-        var request = new RenameRequest("NEW_NAME", IncrementMode.Numeric, startIndex: 1);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 1,
+            incrementMode: IncrementMode.Numeric);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         var result = batchRenameService.Rename(filePairs, request);
@@ -86,7 +96,12 @@ public class BatchRenameServiceTests
             tempDirectory.CreateImageFile("IMG003.jpg")
         };
 
-        var request = new RenameRequest("NEW_NAME", IncrementMode.Numeric, startIndex: 1);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 1,
+            incrementMode: IncrementMode.Numeric);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         var result = batchRenameService.Rename(filePairs, request);
@@ -109,7 +124,12 @@ public class BatchRenameServiceTests
     {
         using var tempDirectory = new TemporaryTestDirectory();
 
-        var request = new RenameRequest("NEW_NAME", IncrementMode.Numeric, startIndex: 1);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 1,
+            incrementMode: IncrementMode.Numeric);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         var result = batchRenameService.Rename(Array.Empty<FilePair>(), request);
@@ -124,7 +144,12 @@ public class BatchRenameServiceTests
     [Fact]
     public void Rename_NullFilePairs_ThrowsArgumentNullException()
     {
-        var request = new RenameRequest("NEW_NAME", IncrementMode.Numeric, startIndex: 1);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: 1,
+            incrementMode: IncrementMode.Numeric);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         Assert.Throws<ArgumentNullException>(() => batchRenameService.Rename(null!, request));
@@ -155,7 +180,12 @@ public class BatchRenameServiceTests
             tempDirectory.CreateImageWithJsonPair("IMG001.jpg", "IMG001.json")
         };
 
-        var request = new RenameRequest("NEW_NAME", IncrementMode.None);
+        var request = new RenameRequest(
+            "NEW_NAME",
+            midNumber: null,
+            midText: string.Empty,
+            endNumber: null,
+            incrementMode: IncrementMode.None);
         var batchRenameService = new BatchRenameService(new SafeRenameService());
 
         var result = batchRenameService.Rename(filePairs, request);
