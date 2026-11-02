@@ -1,6 +1,6 @@
-# Photo Rename Agent
+# PhotoRename — Batch Photo Renaming Tool
 
-Photo Rename Agent 是一個使用 C# / .NET Windows Forms 開發的照片批次重新命名工具，將原有的 Python 工具重新實作為較容易測試與維護的桌面應用程式。
+一款使用 C# / .NET 開發的桌面應用程式，提供照片批次重新命名功能，支援自訂命名規則、檔名預覽與安全重新命名機制。專案採用 AI Agent 協作開發流程完成。
 
 ## 功能
 
