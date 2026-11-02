@@ -72,8 +72,8 @@ IMG001.json
 重新命名後：
 
 ```text
-TY-LV-448_20240201_白菜_蚜蟲_有翅蟲體_48.jpg
-TY-LV-448_20240201_白菜_蚜蟲_有翅蟲體_48.json
+NY-YG-448_蛋白質_48.jpg
+NY-YG-448_蛋白質_48.json
 ```
 
 JSON 副檔名判斷應不區分大小寫。
@@ -106,13 +106,13 @@ IMG001.JSON
 
 ```text
 Prefix:
-TY-LV-
+NY-YG-
 
 Mid Number:
 448
 
 Mid Text:
-_20240201_白菜_蚜蟲_有翅蟲體_
+蛋白質
 
 End Number:
 48
@@ -121,7 +121,7 @@ End Number:
 產生：
 
 ```text
-TY-LV-448_20240201_白菜_蚜蟲_有翅蟲體_48.jpg
+NY-YG-448_蛋白質_48.jpg
 ```
 
 其中：
@@ -133,7 +133,7 @@ TY-LV-448_20240201_白菜_蚜蟲_有翅蟲體_48.jpg
 例如：
 
 ```text
-TY-LV-
+NY-YG-
 ```
 
 ### Mid Number
@@ -205,9 +205,9 @@ TY-LV-
 產生：
 
 ```text
-TY-LV-448_xxx_48.jpg
-TY-LV-448_xxx_49.jpg
-TY-LV-448_xxx_50.jpg
+NY-YG-448_蛋白質_48.jpg
+NY-YG-448_蛋白質_49.jpg
+NY-YG-448_蛋白質_50.jpg
 ```
 
 ---

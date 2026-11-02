@@ -50,8 +50,8 @@ dotnet run --project .\src\PhotoRename.App\PhotoRename.App.csproj
 例如：
 
 ```text
-輸入：TY-LV-、448、_白菜_、48
-輸出：TY-LV-448_白菜_48.jpg
+輸入：NY-YG-、448、蛋白質、48
+輸出：NY-YG-448_蛋白質_48.jpg
 ```
 
 數字可依設定補零，例如 `1` 可格式化為 `001` 或 `01`。
