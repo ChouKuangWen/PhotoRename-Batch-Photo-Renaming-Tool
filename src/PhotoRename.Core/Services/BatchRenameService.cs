@@ -9,46 +9,71 @@ public sealed class BatchRenameService
 {
     private readonly SafeRenameService _safeRenameService;
 
-    public BatchRenameService(SafeRenameService safeRenameService)
+    public BatchRenameService(
+        SafeRenameService safeRenameService)
     {
-        _safeRenameService = safeRenameService ?? throw new ArgumentNullException(nameof(safeRenameService));
+        _safeRenameService =
+            safeRenameService
+            ?? throw new ArgumentNullException(
+                nameof(safeRenameService));
     }
 
-    public BatchRenameResult Rename(IEnumerable<FilePair> filePairs, RenameRequest request)
+    public BatchRenameResult Rename(
+        IEnumerable<FilePair> filePairs,
+        RenameRequest request)
     {
         if (filePairs is null)
         {
-            throw new ArgumentNullException(nameof(filePairs));
+            throw new ArgumentNullException(
+                nameof(filePairs));
         }
 
         if (request is null)
         {
-            throw new ArgumentNullException(nameof(request));
+            throw new ArgumentNullException(
+                nameof(request));
         }
 
-        var results = new List<RenameResult>();
+        var results =
+            new List<RenameResult>();
+
+        // 第一張照片從 Index = 0 開始。
+        request.Index = 0;
 
         foreach (var filePair in filePairs)
         {
-            var result = _safeRenameService.Rename(filePair, request);
+            var result =
+                _safeRenameService.Rename(
+                    filePair,
+                    request);
+
             results.Add(result);
 
-            if (request.IncrementMode == IncrementMode.Numeric)
-            {
-                request.Index++;
-            }
+            // 下一張照片。
+            request.Index++;
         }
 
-        var successCount = results.Count(result => result.Success);
-        var failureCount = results.Count - successCount;
+        var successCount =
+            results.Count(result => result.Success);
+
+        var failureCount =
+            results.Count - successCount;
 
         return new BatchRenameResult
         {
             Success = failureCount == 0,
-            TotalCount = results.Count,
-            SuccessCount = successCount,
-            FailureCount = failureCount,
-            Results = results
+
+            TotalCount =
+                results.Count,
+
+            SuccessCount =
+                successCount,
+
+            FailureCount =
+                failureCount,
+
+            Results =
+                results
         };
     }
 }
